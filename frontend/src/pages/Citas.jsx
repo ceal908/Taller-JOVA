@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 import Footer from '../components/FooterINI';
 import Tabla1 from '../components/Tabla1';
 import { Btn, Input, Card, PageTitle } from '../components/UIkit';
+import FormGrid from '../components/Formgrid';
 import '../template.css';
 
 export default function Citas() {
@@ -45,71 +46,73 @@ export default function Citas() {
     <div className="dashboard-layout">
       <Sidebar />
       <main className="main-content">
-
-        {/* Título principal */}
         <PageTitle>Citas</PageTitle>
 
-        {/* --- Formulario nueva cita --- */}
         <Card title="Nueva Cita">
-          <form className="cita-form">
-            {/* Buscar o crear cliente */}
-            <div className="row align">
-              <Input label="Buscar cliente:" placeholder="Nombre o teléfono" list="clientesList" />
+          <FormGrid columns={3}>
+            {/* 1ra fila: Buscar cliente y checkbox */}
+            <div>
+              <label>Buscar cliente:</label>
+              <input type="text" placeholder="Nombre o teléfono" list="clientesList" />
               <datalist id="clientesList">
                 <option value="Juan Pérez" />
                 <option value="Ana López" />
               </datalist>
-              <label className="switch" style={{marginLeft:'18px'}}>
-                <input type="checkbox" /> Cliente nuevo
-              </label>
+            </div>
+            <div>
+              <label htmlFor="nuevo">Cliente nuevo?</label>
+              <input type="checkbox" id="nuevo" /> 
+            </div>
+            <div></div> {/* Espacio para alinear */}
+
+            {/* 2da fila: Datos cliente */}
+            <div>
+              <label>Nombre:</label>
+              <input type="text" disabled />
+            </div>
+            <div>
+              <label>Teléfono:</label>
+              <input type="text" disabled />
+            </div>
+            <div>
+              <label>Correo:</label>
+              <input type="email" disabled />
             </div>
 
-            {/* Datos del cliente */}
-            <div className="row triple">
-              <div>
-                <Input label="Nombre:" disabled />
-              </div>
-              <div>
-                <Input label="Teléfono:" disabled />
-              </div>
-              <div>
-                <Input label="Correo:" type="email" disabled />
-              </div>
-            </div>
-
-            <div className="row align">
+            {/* 3ra fila: Vehículo, descripción temporal, fecha/hora */}
+            <div>
               <label>Vehículo:</label>
-              <select className="ui-input">
+              <select>
                 <option value="">Seleccionar vehículo...</option>
                 <option value="temporal">No registrado (describir abajo)</option>
               </select>
-              <Input placeholder="Descripción temporal" />
+            </div>
+            <div>
+              <label>Fecha y hora:</label>
+              <input type="datetime-local" />
             </div>
 
-            <div className="row">
-              <Input label="Fecha y hora:" type="datetime-local" />
-            </div>
-            <div className="row">
+            {/* 4ta fila: Tipo de cita, Motivo, Observaciones */}
+            <div>
               <label>Tipo de cita:</label>
-              <select className="ui-input">
+              <select>
                 <option value="recepción">Recepción</option>
                 <option value="entrega">Entrega</option>
               </select>
             </div>
-            <div className="row">
-              <Input label="Motivo:" placeholder="Motivo de la cita" />
-            </div>
-            <div className="row">
+            <div>
               <label>Observaciones:</label>
-              <textarea className="ui-input" placeholder="Detalles u observaciones"></textarea>
+              <textarea placeholder="Detalles u observaciones"></textarea>
             </div>
-            <div className="row">
+
+            {/* Botón */}
+            <div style={{gridColumn:'1/-1', textAlign:'right'}}>
               <Btn type="submit">Guardar cita</Btn>
             </div>
-          </form>
+          </FormGrid>
         </Card>
 
-        {/* --- Tabla de citas --- */}
+        {/* Tabla de citas */}
         <section className="citas-listado">
           <Card title="Citas Agendadas">
             <Tabla1 columns={columns} data={citas} renderActions={renderActions} />
@@ -120,4 +123,3 @@ export default function Citas() {
     </div>
   );
 }
-

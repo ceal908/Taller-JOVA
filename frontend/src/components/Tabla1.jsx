@@ -1,7 +1,8 @@
-// src/components/Tabla1jsx
+// src/components/Tabla1.jsx
 import React from 'react';
 
-export default function Tabla1({ columns, data, renderActions }) {
+// columns: [{key:..., label:...}], data: array, renderActions: func (opcional), onRowClick: func, rowClass: func
+export default function Tabla1({ columns, data, renderActions, onRowClick, rowClass }) {
   return (
     <table>
       <thead>
@@ -14,7 +15,12 @@ export default function Tabla1({ columns, data, renderActions }) {
       </thead>
       <tbody>
         {data.map((row, idx) => (
-          <tr key={row.id || idx}>
+          <tr
+            key={row.id || idx}
+            className={rowClass ? rowClass(row) : ''}
+            style={{ cursor: onRowClick ? 'pointer' : undefined }}
+            onClick={onRowClick ? () => onRowClick(row) : undefined}
+          >
             {columns.map(col => (
               <td key={col.key || col}>{row[col.key || col]}</td>
             ))}

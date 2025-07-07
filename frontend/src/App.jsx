@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Citas from "./pages/Citas";
 import Default from "./pages/Default";
+import Usuarios from "./pages/Usuarios";
+import Inventario from "./pages/Inventario";
 // ...otros imports
 
 function App() {
@@ -14,8 +16,9 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Citas" element={<Citas />} />
+        <Route path="/Usuarios" element={<Usuarios />} />
+        <Route path="/Inventario" element={<Inventario />} />
         <Route path="/Default" element={<Default />} />
-        <Route path="/Botonera" element={<Botonera />} />
         {/* ...otras rutas */}
       </Routes>
     </BrowserRouter>

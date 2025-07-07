@@ -12,7 +12,6 @@ export default function Sidebar() {
           <li><a href="/usuarios">Usuarios</a></li>
           <li><a href="/inventario">Inventario</a></li>
           <li><a href="/citas">Citas</a></li>
-          <li><a href="/citas">ejempolo</a></li>
           <li><a href="/login" id="cerrarSesion">Cerrar sesión</a></li>
         </ul>
       </nav>

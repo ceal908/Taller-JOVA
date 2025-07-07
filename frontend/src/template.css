@@ -292,3 +292,9 @@ th {
 .ui-card-title { margin: 0 0 18px 0; font-size: 1.2rem; font-weight: 700; }
 .ui-page-title { font-size: 2.2rem; margin: 0 0 18px 0; }
 
+/* Fila seleccionada en la tabla */
+.row-selected {
+  background: #e5f6ec !important;
+  /* Puedes ajustar el color, este es un verde claro */
+}
+
