@@ -15,6 +15,7 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Citas" element={<Citas />} />
         <Route path="/Default" element={<Default />} />
+        <Route path="/Botonera" element={<Botonera />} />
         {/* ...otras rutas */}
       </Routes>
     </BrowserRouter>

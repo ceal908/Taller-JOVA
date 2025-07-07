@@ -1,0 +1,20 @@
+/* global.css */
+:root {
+  --jovablue1: #256c34;
+  --jovared1: #d62c2c;
+  --jovagris1: #f4f6f8;
+  --borde-radius1: 7px;
+  --font-main1: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: var(--jovagris1);
+  font-family: var(--font-main1);
+  margin: 0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;      /* Espacio entre botones */
+  margin-top: 20px;
+}

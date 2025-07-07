@@ -11,7 +11,7 @@
 }
 
 /* FUENTES Y COLORES BASE */
-body {
+body { 
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--jovagris);
   margin: 0;
