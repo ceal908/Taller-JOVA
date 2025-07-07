@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f8;
+  color: #232b32;
+}
+.navbar {
+  background: #222b32;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 36px;
+  height: 60px;
+  box-shadow: 0 2px 6px 0 #0002;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.navbar nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+.navbar nav ul li a.activo, .navbar nav ul li a:hover {
+  background: #fff2;
+}
+.navbar nav ul li a.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+  cursor: default;
+}
+
+.hero {
+  background: #256c34;
+  color: #fff;
+  padding: 60px 24px 40px 24px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.hero p {
+  font-size: 1.16rem;
+  margin-bottom: 0;
+}
+
+.contacto {
+  background: #fff;
+  margin: 40px auto 0 auto;
+  max-width: 440px;
+  padding: 36px 28px 28px 28px;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px #0001;
+  text-align: center;
+}
+.contacto h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222b32;
+  font-size: 1.32rem;
+  letter-spacing: 1px;
+}
+.contacto-info p {
+  margin: 12px 0 4px 0;
+  font-size: 1.08rem;
+}
+.contacto-info .mini {
+  font-size: 0.98rem;
+  color: #40784c;
+  font-style: italic;
+}
+.contacto-info a {
+  color: #256c34;
+  text-decoration: none;
+  font-weight: 500;
+}
+.contacto-info a:hover {
+  text-decoration: underline;
+}
+footer {
+  margin-top: 64px;
+  background: #222b32;
+  color: #fff;
+  text-align: center;
+  font-size: 0.97rem;
+  padding: 14px 0 10px 0;
+  letter-spacing: 1px;
+  opacity: 0.97;
+  border-top: 3px solid #256c34;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 12px;
+    height: auto;
+  }
+  .logo {
+    margin: 8px 0;
+  }
+  .hero {
+    padding: 34px 8px 24px 8px;
+  }
+  .contacto {
+    padding: 20px 6px 18px 6px;
+    max-width: 98vw;
+  }
+}
+
+.login-card {
+  background: #fff;
+  max-width: 340px;
+  margin: 40px auto 0 auto;
+  padding: 30px 26px 18px 26px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0002;
+}
+.login-card h2 {
+  margin-top: 0;
+  color: #256c34;
+  letter-spacing: 1px;
+  font-size: 1.22rem;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.login-card label {
+  display: block;
+  font-size: 1.01rem;
+  margin-bottom: 2px;
+  margin-top: 8px;
+  color: #232b32;
+}
+.login-card select,
+.login-card input[type="text"],
+.login-card input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.login-card button {
+  width: 100%;
+  background: #256c34;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 0;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.18s;
+  margin-top: 10px;
+}
+.login-card button:hover {
+  background: #1e5430;
+}
+.login-card .error {
+  color: #d62c2c;
+  font-size: 0.98rem;
+  margin-top: 10px;
+  text-align: center;
+  min-height: 24px;
+}
+
